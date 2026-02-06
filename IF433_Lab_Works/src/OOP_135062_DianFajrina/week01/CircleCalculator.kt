@@ -1,6 +1,6 @@
 package oop_135062_dianfajrina.week01
 
-fun main(args: Array<String>) {
+fun main() {
     val radius = 7.0
     val pi = 3.14
 
