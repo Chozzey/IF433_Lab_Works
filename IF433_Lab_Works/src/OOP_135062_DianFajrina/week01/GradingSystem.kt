@@ -3,6 +3,10 @@ package oop_135062_dianfajrina.week01
 fun main() {
     val name = "Chou Tzuyu"
     val score = 100
+    val studentId: String? = null
+    val idLength = studentId?.length ?: 0
+
+    println("Panjang ID: $idLength")
 
     println("Nama: $name, Nilai: $score")
 
