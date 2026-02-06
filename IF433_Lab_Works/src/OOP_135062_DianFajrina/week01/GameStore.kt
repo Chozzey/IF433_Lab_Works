@@ -5,7 +5,6 @@ fun main() {
     val price = 699000
     val userNote: String? = null
 
-
     val discount = calculateDiscount(price)
     val finalPrice = price - discount
 
