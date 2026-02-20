@@ -1,5 +1,7 @@
 package oop_135062_dianfajrina.week03
 
+import kotlin.div
+
 class Employee(val name: String) {
     var salary: Int = 0
         set(value) {
@@ -11,15 +13,18 @@ class Employee(val name: String) {
             }
 
         }
+    private var performanceRating: Int = 3
+
+    fun increasePerformance() {
+        performanceRating++
+        println("Kinerja $name meningkat! Rating: $performanceRating")
+    }
+
+    fun printStatu() {
+        println("Karyawan: $name, Rating: $performanceRating")
+    }
+
+    val bonus: Int
+        get() = salary / 10
 }
 
-private var performanceRating: Int = 3
-
-fun increasePerformance() {
-    performanceRating++
-    println("Kinerja $name meningkat! Rating: $performanceRating")
-}
-
-fun printStatu() {
-    println("Karyawan: $name, Rating: $performanceRating")
-}
