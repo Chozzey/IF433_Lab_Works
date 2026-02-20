@@ -12,3 +12,14 @@ class Employee(val name: String) {
 
         }
 }
+
+private var performanceRating: Int = 3
+
+fun increasePerformance() {
+    performanceRating++
+    println("Kinerja $name meningkat! Rating: $performanceRating")
+}
+
+fun printStatu() {
+    println("Karyawan: $name, Rating: $performanceRating")
+}
