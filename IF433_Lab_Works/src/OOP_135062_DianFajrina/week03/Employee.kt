@@ -24,5 +24,8 @@ class Employee(val name: String) {
 
     val bonus: Int
         get() = salary / 10
+
+    val tax: Int
+        get() = salary / 10
 }
 
