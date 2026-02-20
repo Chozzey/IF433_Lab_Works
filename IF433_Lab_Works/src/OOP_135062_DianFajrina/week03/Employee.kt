@@ -1,7 +1,5 @@
 package oop_135062_dianfajrina.week03
 
-import kotlin.div
-
 class Employee(val name: String) {
     var salary: Int = 0
         set(value) {
