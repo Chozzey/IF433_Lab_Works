@@ -1,4 +1,4 @@
-package oop_135062_dianfajrina.week2
+package oop_135062_dianfajrina.week02
 
 class Loan(
     val bookTitle: String,

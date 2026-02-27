@@ -1,4 +1,4 @@
-package oop_135062_dianfajrina.week2
+package oop_135062_dianfajrina.week02
 
 import java.util.Scanner
 
