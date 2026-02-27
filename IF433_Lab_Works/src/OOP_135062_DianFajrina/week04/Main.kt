@@ -7,7 +7,7 @@ fun main() {
     generalVehicle.accelerate()
 
     println("\n--- Testing Car ---")
-    val myCar = Car("Toyota", 4)
+    val myCar = Car("Hyundai Palisade", 4)
     myCar.openTrunk()
     myCar.honk()
     myCar.accelerate()
@@ -21,8 +21,8 @@ fun main() {
 
     println("\n=== Employee Test ===")
 
-    val manager = Manager("Budi", 8000000)
-    val developer = Developer("Siti", 7000000, "Kotlin")
+    val manager = Manager("Tzuyu", 8000000)
+    val developer = Developer("Jihyo", 7000000, "Kotlin")
 
     manager.work()
     println("Bonus Manager: Rp ${manager.calculateBonus()}")
