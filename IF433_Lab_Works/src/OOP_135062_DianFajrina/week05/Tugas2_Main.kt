@@ -10,7 +10,15 @@ fun main() {
     println("=== SISTEM PEMBAYARAN ===")
 
     for (payment in payments) {
+
         payment.processPayment(75000.0)
+
+        if (payment is EWallet) {
+            println("Melakukan TopUp otomatis...")
+            payment.topUp(50000.0)
+            payment.processPayment(75000.0)
+        }
+
         println()
     }
 }
