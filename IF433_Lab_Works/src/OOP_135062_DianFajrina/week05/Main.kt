@@ -1,0 +1,24 @@
+package oop_135062_dianfajrina.week05
+
+fun main() {
+    val dosen1 = Dosen("Pak Alex", "0123456")
+    val admin1 = Admin("Bu Jihyo")
+
+    val daftarPegawai: List<Pegawai> = ListOf(dosen1, admin1)
+
+    println("=== AKTIVITAS PEGAWI ===")
+    for (pegawai in daftarPegawai) {
+        pegawai.bekerja()
+        when (pegawai) {
+            is Dosen -> {
+                println("=> Terdeteksi sebagai Dosen (NIDN: ${pegawai.nidn})")
+                pegawai.mengajar()
+            }
+            is Admin -> {
+                println("=> Terdeteksi sebagai Admin")
+                pegawai.doAdminWork()
+            }
+        }
+        println("-------------------------------")
+    }
+}
