@@ -4,9 +4,9 @@ fun main() {
     val dosen1 = Dosen("Pak Alex", "0123456")
     val admin1 = Admin("Bu Jihyo")
 
-    val daftarPegawai: List<Pegawai> = ListOf(dosen1, admin1)
+    val daftarPegawai: List<Pegawai> = listOf(dosen1, admin1)
 
-    println("=== AKTIVITAS PEGAWI ===")
+    println("=== AKTIVITAS PEGAWAI ===")
     for (pegawai in daftarPegawai) {
         pegawai.bekerja()
         when (pegawai) {
