@@ -12,7 +12,6 @@ interface Switchable {
 
 interface Recordable {
     fun startRecord()
-
     fun stopRecord() {
         println("Perekaman dihentikan dan disimpan ke Cloud.")
     }

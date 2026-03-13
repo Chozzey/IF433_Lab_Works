@@ -1,7 +1,6 @@
 package oop_135062_dianfajrina.week06
 
 class SmartHomeHub {
-
     val devices = mutableListOf<SmartDevice>()
 
     fun addDevice(device: SmartDevice) {
@@ -18,13 +17,11 @@ class SmartHomeHub {
 
     fun activateSecurityMode() {
         for (device in devices) {
-
             if (device is Recordable) {
                 device.startRecord()
             }
-
             if (device is SmartSpeaker) {
-                device.playMusic("Sirine Peringatan")
+                device.playMusic("This is for")
             }
         }
     }
