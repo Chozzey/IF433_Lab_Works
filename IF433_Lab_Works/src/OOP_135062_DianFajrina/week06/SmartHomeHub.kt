@@ -21,7 +21,7 @@ class SmartHomeHub {
                 device.startRecord()
             }
             if (device is SmartSpeaker) {
-                device.playMusic("This is for")
+                device.playMusic("This is for by TWICE")
             }
         }
     }
