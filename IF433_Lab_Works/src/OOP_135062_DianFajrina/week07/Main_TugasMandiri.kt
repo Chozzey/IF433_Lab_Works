@@ -23,7 +23,7 @@ fun main() {
     // 4. Upgrade senjata menggunakan copy()
     println("\n--- Upgrade Senjata ---")
     val upgradedItem = starterSword.item.copy(damage = 25, name = "Pedang Kayu Upgrade")
-    val upgradedWeapon = Weapon(upgradedItem, starterSword.durability)
+    val upgradedWeapon = Weapon.create(upgradedItem, starterSword.durability)   // gunakan create
     println("Senjata setelah upgrade: $upgradedWeapon")
 
     // 5. Simulasi event berurutan

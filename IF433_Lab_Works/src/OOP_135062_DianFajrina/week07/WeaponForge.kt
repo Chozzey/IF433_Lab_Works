@@ -8,8 +8,13 @@ class Weapon private constructor(val item: GameItem, val durability: Int) {
         }
 
         fun forgeEpicSword(): Weapon {
-            val item = GameItem("Pedang Api", 50, ItemRarity.EPIC)
+            val item = GameItem("Pedang Naga", 50, ItemRarity.EPIC)
             return Weapon(item, 100)
+        }
+
+        // Tambahkan factory method untuk membuat senjata custom
+        fun create(item: GameItem, durability: Int): Weapon {
+            return Weapon(item, durability)
         }
     }
 
