@@ -29,7 +29,7 @@ fun main() {
     // 5. Simulasi event berurutan
     println("\n--- Event Battle ---")
     processEvent(BattleState.SafeZone)
-    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.MonsterEncounter("Minion Nakal"))
     processEvent(BattleState.LootDropped(upgradedItem))
     processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
