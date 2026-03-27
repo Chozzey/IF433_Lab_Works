@@ -3,9 +3,15 @@ package oop_135062_dianfajrina.week07
 fun main() {
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
-    DatabaseManager.connet()
+    DatabaseManager.connect()
 
     println("\n=== TEST COMPANION OBJECT ===")
     val client = NetworkClient.createClient()
     client.connect()
+
+    println("\n=== TEST REGULAR CLASS ===")
+    val reg1 = RegulerUser("Tzuyu", 27)
+    val reg2 = RegulerUser("Tzuyu", 27)
+    println(reg1)
+    println("Sama? ${reg1 == reg2}")
 }
