@@ -3,7 +3,6 @@ package oop_135062_dianfajrina.week8
 fun main() {
     println("=== TEST SAFE CALLS & ELVIS ===")
     val emptyOrder = Order(null, null)
-
     val destination = emptyOrder.deliveryDetails?.address?.city?.name ?: "Kota Tidak Diketahui"
     println("Tujuan pengiriman: $destination")
 
@@ -23,16 +22,12 @@ fun main() {
         "Laptop",
         4500000.0
     )
-
     for (item in mixedData) {
-        val text = item as? String // Hanya cetak jika cast sukses (text tidak null)
-        text?.let {
-            println("Ditemukan teks: ${it.uppercase()}")
-        }
+        val text = item as? String
+        text?.let { println("Ditemukan teks: ${it.uppercase()}") }
     }
 
     val someObject: Any = 100
-    
     val safeString = someObject as? String ?: "Unknown String"
     println("Hasil cast + fallback: $safeString")
 }
