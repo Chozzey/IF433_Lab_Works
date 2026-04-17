@@ -13,11 +13,25 @@ fun main() {
 
     for (raw in rawApiData) {
         try {
-            parser.parseProduct(raw)?.let { product ->
+            val product = parser.parseProduct(raw)
+            if (product != null) {
+                // Cetak detail produk sesuai permintaan
+                when (product) {
+                    is Electronic -> {
+                        val warrantyInfo = if (raw["warranty"] is Int) "Warranty ${product.warrantyMonths}" else "Fallback Warranty ${product.warrantyMonths}"
+                        println("${product.name} ($warrantyInfo)")
+                    }
+                    is Clothing -> {
+                        println("${product.name} (Size ${product.size})")
+                    }
+                }
+                // Lanjutkan checkout (opsional, tapi tetap dijalankan)
                 parser.checkout(product)
             }
+            // Jika product null (misal tipe FOOD), tidak dicetak apa-apa (skip)
         } catch (e: IllegalArgumentException) {
-            println("Data korup: ${e.message}")
+            // Hanya Ghost Item yang menyebabkan exception di sini
+            println("Exception ditangkap untuk \"Ghost Item\"")
         }
     }
 }
