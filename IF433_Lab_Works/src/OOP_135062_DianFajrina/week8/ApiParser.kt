@@ -2,6 +2,7 @@ package oop_135062_dianfajrina.week8
 
 class ApiParser {
     fun parseProduct(rawJson: Map<String, Any?>): Product? {
+        // Ekstrak id dan name. Gunakan requireNotNull dengan pesan error custom
         val id = requireNotNull(rawJson["id"]) { "API Invalid: Missing ID" } as? String
             ?: throw IllegalArgumentException("ID must be String")
         val name = requireNotNull(rawJson["name"]) { "API Invalid: Missing name" } as? String
@@ -19,5 +20,15 @@ class ApiParser {
             }
             else -> null
         }
+    }
+
+    fun checkout(product: Product) {
+        val id = when (product) {
+            is Electronic -> product.id
+            is Clothing -> product.id
+        }
+        // Karena kita yakin Java service selalu berhasil, gunakan !!
+        val transactionId = JavaPaymentService.processPayment(id)!!
+        println("Transaction ID: $transactionId")
     }
 }
