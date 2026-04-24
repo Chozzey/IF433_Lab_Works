@@ -3,7 +3,7 @@ package oop_135062_dianfajrina.week09
 fun main() {
     println("=== TEST LIST ===")
 
-    val framework: List<String> = ListOf("Kotlin", "Java", "C++")
+    val frameworks: List<String> = listOf("Kotlin", "Java", "C++")
     println("immutable List: $frameworks")
 
     val scores: MutableList<Int> = mutableListOf(85,90)

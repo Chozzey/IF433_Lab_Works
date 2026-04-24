@@ -1,7 +1,5 @@
 package oop_135062_dianfajrina.week09
 
-package oop_001_johnthor.week09
-
 fun main() {
     // Checkpoint 11: Inisialisasi Data Uji
     val tradeHistory = listOf(
