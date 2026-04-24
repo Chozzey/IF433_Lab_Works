@@ -1,0 +1,15 @@
+package oop_135062_dianfajrina.week09
+
+package oop_001_johnthor.week09
+
+fun main() {
+    // Checkpoint 11: Inisialisasi Data Uji
+    val tradeHistory = listOf(
+        TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
+        TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
+        TradeLog("BTCUSDT", "SHORT", 50, 2.5, "OPEN"),
+        TradeLog("SOLUSDT", "LONG", 15, 12.0, "CLOSED"),
+        TradeLog("ETHUSDT", "LONG", 25, -8.4, "CLOSED"),
+        TradeLog("BTCUSDT", "LONG", 10, 5.0, "CLOSED")
+    )
+}
