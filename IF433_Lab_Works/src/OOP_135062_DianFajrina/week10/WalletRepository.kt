@@ -10,7 +10,7 @@ class WalletRepository<T : Any> {
     fun getAll(): List<T> {
         return items
     }
-    
+
     fun findByName(query: String): List<T> {
         return items.filter { item ->
             item.toString().contains(query, ignoreCase = true)
