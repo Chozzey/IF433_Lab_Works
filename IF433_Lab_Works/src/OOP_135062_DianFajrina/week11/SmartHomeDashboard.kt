@@ -60,4 +60,10 @@ fun main() {
     }
 
     println("Total daya: $totalPower Watt")
+
+    println("\n=== SMART HOME DEVICES ===")
+
+    homeDevices.forEach {
+        println(it.diagnose())
+    }
 }
