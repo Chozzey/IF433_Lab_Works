@@ -72,6 +72,7 @@ fun main() {
             "Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr"
         )
 
+    // onFailure
     }.onFailure { error ->
 
         println(
