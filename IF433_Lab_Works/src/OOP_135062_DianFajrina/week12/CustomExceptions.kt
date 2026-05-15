@@ -20,7 +20,7 @@ class BankAccount(var balance: Double) {
 
 fun main() {
     println("=== TEST MULTIPLE CATCH ===")
-    val account = BankAccount()
+    val account = BankAccount(100.0)
 
     try {
         account.withdraw(150.0) // Ini akan memicu InsufficientFundsException

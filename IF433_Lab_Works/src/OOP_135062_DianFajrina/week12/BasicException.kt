@@ -16,7 +16,7 @@ fun main() {
     val inputString = "123A"
 
     val result: Int = try {
-        integer.parseInt(inputString)
+        Integer.parseInt(inputString)
     } catch (e: NumberFormatException) {
         -1
     }
