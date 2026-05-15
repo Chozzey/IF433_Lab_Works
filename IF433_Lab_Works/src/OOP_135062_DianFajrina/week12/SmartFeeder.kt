@@ -83,4 +83,6 @@ fun main() {
             "(Opsional: Berikan chicken jerky secara manual)"
         )
     }
+
+    // sebenarnya checkpoint 18-20 udah jadi 1 di 17 
 }
