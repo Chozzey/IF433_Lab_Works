@@ -84,5 +84,5 @@ fun main() {
         )
     }
 
-    // sebenarnya checkpoint 18-20 udah jadi 1 di 17 
+    // sebenarnya checkpoint 18-20 udah jadi 1 di 17
 }
