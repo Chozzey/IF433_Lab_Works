@@ -48,3 +48,21 @@ fun saveTrades(
             }
         }
 }
+
+fun loadTrades(path: String): List<TradeRecord> {
+
+    return try {
+
+        File(path)
+            .readLines()
+            .mapNotNull {
+                fromCsvTrade(it)
+            }
+
+    } catch (e: FileNotFoundException) {
+
+        println("Error: File tidak ditemukan!")
+
+        emptyList()
+    }
+}
