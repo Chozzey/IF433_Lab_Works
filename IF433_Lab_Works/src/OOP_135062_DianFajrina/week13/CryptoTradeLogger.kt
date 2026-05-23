@@ -117,3 +117,12 @@ fun main() {
 
     val totalPnl =
         loadedData.sumOf { it.pnl }
+    println("\n=== VALID TRADE HISTORY ===")
+
+    loadedData.forEach {
+
+        println(it)
+    }
+
+    println("\n==== TOTAL PnL BERSIH: $totalPnl ====")
+}
