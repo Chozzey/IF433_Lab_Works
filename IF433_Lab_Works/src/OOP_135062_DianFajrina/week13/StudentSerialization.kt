@@ -4,14 +4,14 @@ import java.io.FileNotFoundException
 
 data class Student(val name: String, val age: Int, val gpa: Double)
 
-fun Student.toCvs(): String = "$name, $age, $gpa"
+fun Student.toCsv(): String = "$name, $age, $gpa"
 
-fun fromCsv(Line: String): Student {
-    val parts = Line.split(",")
+fun fromCsv(line: String): Student {
+    val parts = line.split(",")
     return Student(parts[0], parts[1].toInt(), parts[2].toDouble())
 }
 
-fun saveStudent(student: List<Student>, path: String) {
+fun saveStudents(students: List<Student>, path: String) {
     File(path).writeText(students.joinToString("\n") { it.toCsv() })
 }
 
@@ -22,4 +22,16 @@ fun loadStudents(path: String): List<Student> {
         println("Error: File tidak ditemukan!")
         emptyList()
     }
+}
+
+fun main() {
+    val students = listOf(
+        Student("Tzuyu", 20, 3.8),
+        Student("Momo", 22, 3.7),
+    )
+    saveStudents(students, "students.csv")
+
+    val loaded = loadStudents("students.csv")
+    println("=== LOADED STUDENT DATA ===")
+    loaded.forEach { println(it) }
 }

@@ -1,5 +1,6 @@
 package oop_135062_dianfajrina.week13
 import java.io.File
+import kotlin.collections.forEach
 
 fun main() {
     println("=== TEST UNSAFE RESOURCE HANDLING ===")
@@ -12,22 +13,27 @@ fun main() {
 
     writer.close()
     println("File selesai ditulis dan stream ditutup.")
-}
 
-println("\n=== TEST SAFE RESOURCE HANDLING ===")
-val safeFile = File("safe_logs.txt")
+    println("\n=== TEST SAFE RESOURCE HANDLING ===")
+    val safeFile = File("safe_logs.txt")
 
-safeFile.printWrite().use { out ->
-    for (i in 1..100) {
-        out.println("Safe Log entry #$i: System status OK.")
+    safeFile.printWriter().use { out ->
+        for (i in 1..100) {
+            out.println("Safe Log entry #$i: System status OK.")
+        }
+    }
+
+    println("100 baris log berhasil di-generate dengan sangat aman.")
+
+    println("\n=== TEST BUFFERED READER ===")
+
+    safeFile.bufferedReader().use { reader ->
+        reader.lineSequence().take(5).forEach { line ->
+            println("Stream Read: $line")
+        }
     }
 }
-println("100 baris log berhasil di-generate dengan sangat aman.")
 
-println("\n=== TEST BUFFERED READER ===")
 
-safeFile.bufferedReader().use { reader ->
-    reader.lineSequence().take(5).forEach { line ->
-        println("Stream Read: $line")
-    }
-}
+
+
