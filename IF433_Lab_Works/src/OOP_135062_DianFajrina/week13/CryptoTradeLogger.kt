@@ -1,4 +1,6 @@
 package oop_135062_dianfajrina.week13
+import java.io.File
+import java.io.FileNotFoundException
 
 data class TradeRecord(
     val id: Int,
@@ -66,3 +68,42 @@ fun loadTrades(path: String): List<TradeRecord> {
         emptyList()
     }
 }
+
+fun main() {
+
+    println("=== CRYPTO TRADE LOGGER ===")
+
+    // Mock Data
+    val trades = listOf(
+
+        TradeRecord(
+            1,
+            "BTCUSDT",
+            "Long",
+            1000.0,
+            150.0
+        ),
+
+        TradeRecord(
+            2,
+            "ETHUSDT",
+            "Short",
+            500.0,
+            -50.0
+        ),
+
+        TradeRecord(
+            3,
+            "SOLUSDT",
+            "Long",
+            750.0,
+            120.0
+        )
+    )
+
+
+    // Save
+    saveTrades(
+        trades,
+        "crypto_trades.csv"
+    )
