@@ -2,12 +2,14 @@ package oop_135062_dianfajrina.week14
 import java.io.FileWriter
 
 interface PricingStrategy {
+
     fun calculate(price: Double): Double
 }
 
 class RegularPricing : PricingStrategy {
 
     override fun calculate(price: Double): Double {
+
         return price
     }
 }
@@ -15,6 +17,7 @@ class RegularPricing : PricingStrategy {
 class VipPricing : PricingStrategy {
 
     override fun calculate(price: Double): Double {
+
         return price * 0.90
     }
 }
@@ -24,10 +27,10 @@ interface OrderRepository {
 
     fun saveOrder(
         itemName: String,
-        finalPrice: Double,
-        customerType: String
+        finalPrice: Double
     )
 }
+
 
 class CsvOrderRepository(
     private val fileName: String
@@ -35,14 +38,13 @@ class CsvOrderRepository(
 
     override fun saveOrder(
         itemName: String,
-        finalPrice: Double,
-        customerType: String
+        finalPrice: Double
     ) {
 
         FileWriter(fileName, true).use { writer ->
 
             writer.append(
-                "$itemName,$finalPrice,$customerType\n"
+                "$itemName,$finalPrice\n"
             )
         }
     }
@@ -53,6 +55,7 @@ interface NotificationService {
 
     fun sendNotification(message: String)
 }
+
 
 class EmailNotifier : NotificationService {
 
@@ -71,22 +74,21 @@ class SafeOrderProcessor(
     fun processOrder(
         itemName: String,
         basePrice: Double,
-        customerType: String,
         pricing: PricingStrategy
     ) {
 
-        // Hitung harga akhir
-        val finalPrice = pricing.calculate(basePrice)
+        // Hitung harga menggunakan strategy
+        val finalPrice =
+            pricing.calculate(basePrice)
 
         println(
             "Memproses pesanan $itemName seharga $finalPrice"
         )
 
-        // Simpan order ke CSV
+        // Simpan ke file CSV
         repo.saveOrder(
             itemName,
-            finalPrice,
-            customerType
+            finalPrice
         )
 
         // Kirim notifikasi
@@ -98,7 +100,7 @@ class SafeOrderProcessor(
 
 
 fun main() {
-
+    
     val repository =
         CsvOrderRepository("orders.csv")
 
@@ -111,19 +113,15 @@ fun main() {
             notifier
         )
 
-    // Customer VIP
     processor.processOrder(
         itemName = "Laptop Gaming",
         basePrice = 15000000.0,
-        customerType = "VIP",
         pricing = VipPricing()
     )
 
-    // Customer Regular
     processor.processOrder(
         itemName = "Mouse Wireless",
         basePrice = 250000.0,
-        customerType = "REGULAR",
         pricing = RegularPricing()
     )
 }
