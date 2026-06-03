@@ -1,7 +1,7 @@
 package oop_135062_dianfajrina.week14
 
 class MySQLDatabase {
-    fun query(sql: String): List<String> = ListOf("data1", "data2")
+    fun query(sql: String): List<String> = listOf("data1", "data2")
 }
 
 class UserService {

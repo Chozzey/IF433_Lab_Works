@@ -100,7 +100,7 @@ class SafeOrderProcessor(
 
 
 fun main() {
-    
+
     val repository =
         CsvOrderRepository("orders.csv")
 
